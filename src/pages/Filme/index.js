@@ -1,11 +1,12 @@
 import React from "react"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import './filme-info.css';
 import api from '../../services/api';
 
 function Filme() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [filme, setFilme] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -21,8 +22,9 @@ function Filme() {
           setFilme(response.data);
           setLoading(false);
         })
-        .catch((wrr) => {
-          console.log("filme não encontrado")
+        .catch(() => {
+          navigate("/", { replace: true });
+          return;
         })
     }
 
@@ -32,7 +34,7 @@ function Filme() {
       console.log("DESMONTADO")
     }
 
-  }, [])
+  }, [id, navigate])
 
   if (loading) {
     return (
@@ -43,7 +45,7 @@ function Filme() {
   }
 
   return (
-    <div className="filme-info" >
+    <div className="filme-info">
       <h1>{filme?.title}</h1>
       <img src={`https://image.tmdb.org/t/p/original/${filme?.backdrop_path}`} alt={filme?.title} />
 
@@ -54,7 +56,7 @@ function Filme() {
       <div className="area-buttons">
         <button>Salvar</button>
         <button>
-          <a href="#">
+          <a target="_blank" rel="noreferrer" href={`https://youtube.com/results?search_query=${filme.title} trailer`}>
             Trailer
           </a>
         </button>

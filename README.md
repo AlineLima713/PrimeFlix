@@ -1,6 +1,9 @@
 <h1 align="center">
   PRIME FLIX
 </h1>
+<h3>
+ Catálogo de filmes - Projeto para praticar o aprendizado do curso de React JS - Curso na Udemy do Matheus Fraga https://bityli.com/jmZ66g
+</h3>
 
 ## Table of contents:
 

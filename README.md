@@ -28,7 +28,15 @@
   <img src="home.gif" width="200" height="400"/>
 </div>
 
-Project developed for the purpose of...
+Project developed with React JS, with the purpose of simulating a movie catalog website.
+
+Objective:
+
+- It's supposed to show a list of the last ten movies added in the api.
+- It's supposed to show movie details.
+- Add and remove movies from favorites page:
+  - Directly from the movie details page
+  - On the favorites page itself.
 
 ## Technologies
 

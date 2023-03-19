@@ -10,6 +10,16 @@ function Filme() {
   const navigate = useNavigate();
   const [filme, setFilme] = useState({});
   const [loading, setLoading] = useState(true);
+  const [imgLoading, setImgLoading] = useState(true);
+  const [hasFilm, setHasFilm] = useState(false);
+
+
+  function getList() {
+    const minhaLista = localStorage.getItem("@primeflix");
+    const filmesSalvos = JSON.parse(minhaLista) || [];
+    return filmesSalvos;
+
+  }
 
   useEffect(() => {
     async function loadFilme() {
@@ -20,6 +30,9 @@ function Filme() {
         }
       })
         .then((response) => {
+
+          setHasFilm(getList().some((filmeSalvo) => filmeSalvo.id === filme.id))
+
           setFilme(response.data);
           setLoading(false);
         })
@@ -31,27 +44,40 @@ function Filme() {
 
     loadFilme();
 
-    return () => {
-      console.log("DESMONTADO")
-    }
+  }, [id, navigate, filme.id])
 
-  }, [id, navigate])
+  function excluirFilme(filmesSalvos, id) {
+    let filtroFilmes = filmesSalvos.filter((item) => {
+      return (item.id !== id)
+    })
 
-  function salvarFilme() {
-    const minhaLista = localStorage.getItem("@primeflix");
+    localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes))
+    toast.info("Filme removido dos favoritos!")
+  }
 
-    let filmesSalvos = JSON.parse(minhaLista) || [];
 
-    const hasFilme = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id);
-
-    if (hasFilme) {
-      toast.warn("Esse filme já está na sua lista!");
-      return;
-    }
-
+  function salvarFilme(filmesSalvos) {
     filmesSalvos.push(filme);
     localStorage.setItem("@primeflix", JSON.stringify(filmesSalvos));
-    toast.success("Filme salvo com sucesso!")
+    toast.success("Filme salvo com sucesso!");
+  }
+
+  const handleClick = () => {
+    const filmesSalvos = getList();
+
+    const Film = filmesSalvos.find((filmeSalvo) => filmeSalvo.id === filme.id)
+
+    if (Film) {
+      excluirFilme(filmesSalvos, Film.id);
+    } else {
+      salvarFilme(filmesSalvos);
+    }
+    setHasFilm(!hasFilm)
+  }
+
+
+  function handleImgLoad() {
+    setImgLoading(false);
   }
 
   if (loading) {
@@ -65,14 +91,20 @@ function Filme() {
   return (
     <div className="filme-info">
       <h1>{filme?.title}</h1>
-      <img src={`https://image.tmdb.org/t/p/original/${filme?.backdrop_path}`} alt={filme?.title} />
+
+      {imgLoading && <div className="carregando-img"> <span>Carregando imagem...</span> </div>}
+      <img
+        src={`https://image.tmdb.org/t/p/original/${filme?.backdrop_path}`}
+        alt={filme?.title}
+        onLoad={handleImgLoad}
+      />
 
       <h3>Sinopse</h3>
       <span>{filme?.overview}</span>
-      <strong>Avaliação: {filme.vote_average.toFixed(1)} / 10</strong>
+      <strong>Avaliação: {filme?.vote_average?.toFixed(1)} / 10</strong>
 
       <div className="area-buttons">
-        <button onClick={salvarFilme}>Salvar</button>
+        <button className={`button ${hasFilm ? 'salvo' : ''}`} onClick={handleClick}>{hasFilm ? "Salvo" : "Salvar"}</button>
         <button>
           <a target="blank" rel="noreferrer" href={`https://youtube.com/results?search_query=${filme.title} trailer`}>
             Trailer

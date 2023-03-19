@@ -32,6 +32,8 @@
   display: block;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  /* -webkit-box-shadow: 5px 5px 37px 17px #000000;  */
+  box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.2);
 }
 
 .lista-filmes a{
@@ -45,4 +47,5 @@
   color: #FFF;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.2);
 }

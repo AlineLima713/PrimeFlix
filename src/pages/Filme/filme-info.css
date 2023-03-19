@@ -12,6 +12,22 @@
   margin: 14px 0;
 }
 
+.carregando-img {
+  display: flex;
+  width: 800px;
+  max-width: 100%;
+  height: 340px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9e0e0;
+}
+
+.carregando-img span {
+  font-size: 20px;
+  color: #777171;
+}
+
 .filme-info img{
   border-radius: 8px;
   width: 800px;
@@ -41,8 +57,17 @@
   transition: all 0.5s;
 }
 
+.button.salvo {
+  background-color: rgb(56, 206, 56);
+  color: #eeeded;
+}
+.button.salvo:hover {
+  background-color: rgb(69, 244, 69);
+  color: #fdfdfd;
+}
+
 .area-buttons button:hover{
-  background-color: brown;
+  background-color: rgb(181, 178, 178);
   color: #FFF;
 }
 

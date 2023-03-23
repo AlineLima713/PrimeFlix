@@ -18,10 +18,10 @@
 ## About the project:
 
 <div>
-  <img src="home.gif" width="200" height="400"/>
-  <img src="home.gif" width="200" height="400"/>
-  <img src="home.gif" width="200" height="400"/>
-  <img src="home.gif" width="200" height="400"/>
+  <img src="src/assets/to_readme/01.gif" width="500" height="300"/>  
+  <img src="src/assets/to_readme/02.gif" width="500" height="300"/>
+  <img src="src/assets/to_readme/03.gif" width="500" height="300"/>
+  <img src="src/assets/to_readme/04.gif" width="500" height="300"/>
   <img src="home.gif" width="200" height="400"/>
   <img src="home.gif" width="200" height="400"/>
   <img src="home.gif" width="200" height="400"/>

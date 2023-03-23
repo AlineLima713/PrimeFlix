@@ -2,7 +2,7 @@
   PRIME FLIX
 </h1>
 <h3>
- Catálogo de filmes - Projeto para praticar o aprendizado do curso de React JS - Curso na Udemy do Matheus Fraga https://bityli.com/jmZ66g
+ Movie Catalog - Project to practice learning the React JS Course - Matheus Fraga Udemy Course https://bityli.com/jmZ66g
 </h3>
 
 ## Table of contents:
@@ -30,6 +30,7 @@
 
 Project developed with React JS, with the purpose of simulating a movie catalog website.
 
+
 Objective:
 
 - It's supposed to show a list of the last ten movies added in the api.
@@ -40,25 +41,25 @@ Objective:
 
 ## Technologies
 
-:white_check_mark: React Native\
+:white_check_mark: React JS\
 :white_check_mark: Styled-components\
-:white_check_mark: Redux\
-:white_check_mark: Redux Saga\
-:white_check_mark: Duck Patterns\
+:white_check_mark: React-toastify\
+:white_check_mark: React-router-dom\
+:white_check_mark: Axios\
 :white_check_mark: React Hooks
 
 ## Prerequisites
 
 Before proceeding, it is ideal that you have the environment set up to create applications in React Native, for this you can follow the guide of the link below:
 
-[React Native's Environment (Android/iOS)](https://reactnative.dev/docs/environment-setup)
+[React JS's Environment (web)](https://react.dev/learn/start-a-new-react-project)
 
 ## Getting started
 
 ```bash
 First you clone the project:
 
-$ git clone https://github.com/username/project-name.git && cd project-name
+$ git clone https://github.com/AlineLima713/PrimeFlix.git && cd PrimeFlix
 
 Then you run the following command to install packages:
 
@@ -67,10 +68,6 @@ $ yarn install
 Next, you start the project:
 
 $ yarn start
-
-Finally you run it like so:
-
-$ yarn android or yarn ios
 ```
 
 ## File structure
@@ -79,47 +76,46 @@ A estrutura de arquivos está da seguinte maneira:
 
 ```bash
 ├── src/
-│   ├── config/
-│   │   └── ReactotronConfig.js
-│   ├── images/
-│   │   ├── rocketseat_logo_roxa.png
-│   │   └── rocketseat_logo.png
+│   ├── Components/
+│   │   └── Header/
+│   │       └── header.css
+│   │       └── index.js
 │   ├── pages/
-│   │   └── Main/
+│   │   └── Error/
+│   │       └── error.css
+│   │       └── index.js
+│   │   └── Favoritos/
+│   │       └── favoritos.css
+│   │       └── index.js
+│   │   └── Filme/
+│   │       └── filme-info.css
+│   │       └── index.js
+│   │   └── Home/
+│   │       └── home.css
 │   │       └── index.js
 │   ├── services/
 │   │   └── api.js
-│   ├── store/
-│   │   ├── ducks/
-│   │   │   └── index.js
-│   │   ├── sagas/
-│   │   │   └── index.js
-│   │   └── index.js
+│   ├── App.js
+│   └── index.css
 │   ├── index.js
 │   └── routes.js
-├── .editorconfig
-├── .eslintrc.json
 ├── .gitignore
-├── babel.config.js
-├── dependencies.json
-├── devDependencies.json
-├── index.js
-├── jsconfig.js
 ├── LICENSE
+├── package-lock.json
 ├── package.json
 └── README.md
 ```
 
 ## License:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/AlineLima713/PrimeFlix/blob/main/LICENSE) file for details.
 
 
 ## Contact:
 
-[Facebook](https://www.facebook.com/profile.php?id=100004301021977 'My facebook')  |  [Instagram](https://www.instagram.com/mrlsk8/ 'My instagram')  |  [Linkedin](https://www.linkedin.com/in/mrlsk8/ 'My linkedin')
+alinelima713@gmail.com | [WhatsApp](https://wa.me/qr/DC44WEYUAZTVD1 'My whatsapp')  |  [Instagram](https://www.instagram.com/alinelima_prog/ 'My instagram')  |  [Linkedin](https://www.linkedin.com/in/aline-lima-977986b0/ 'My linkedin')
 
 <div align="center">
-  Made with :heart: by <strong>Marcelo Lima</strong> 😊
+  Made with :heart: by <strong>Aline Lima</strong> 😊
 </div>
 
